@@ -1,9 +1,3 @@
-/*
- * Copyright (c) 2011-2015 Jarek Sacha. All Rights Reserved.
- *
- * Author's e-mail: jpsacha at gmail.com
- */
-
 package com.bruce.scorecv
 
 import java.io.File
