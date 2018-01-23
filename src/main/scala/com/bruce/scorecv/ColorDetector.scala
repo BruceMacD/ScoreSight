@@ -9,7 +9,7 @@ import scala.math._
 /** Example of using a strategy pattern in algorithm design.
   *
   * The pattern encapsulates an algorithm into a separate class.
-  * To run this use [[ScoreDetector]].
+  * To run this use [[ScoreReader]].
   *
   * The algorithm converts the input image to a binary by checking is pixel color is within a given distance from
   * a desired color.

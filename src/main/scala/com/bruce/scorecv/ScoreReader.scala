@@ -11,17 +11,17 @@ import OpenCVUtils._
  *
  * The original example in the book is using "C++ API". Calls here use "C API" supported by JavaCV.
  */
-object ScoreDetector extends App {
+object ScoreReader extends App {
 
   // Create image processor object
   val colorDetector = new ColorDetector
 
   // Read input image
-  val src = loadAndShowOrExit(new File("data/SingleScore.png"), IMREAD_COLOR)
+  val src = loadAndShowOrExit(new File("data/JustFoxScore.png"), IMREAD_COLOR)
 
   // Set the input parameters
   colorDetector.colorDistanceThreshold = 100
-  // here white characters
+  // find white characters
   colorDetector.targetColor = new ColorRGB(255, 255, 255)
 
   // Process that input image and display the result
