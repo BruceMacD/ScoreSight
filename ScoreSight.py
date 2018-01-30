@@ -1,19 +1,11 @@
 from ScoreReader import read_score
 from ImageGrab import capture_custom, grayscale, cleanup
 from pymouse import PyMouseEvent
+from Exceptions import *
 import time
 
 # bounding box (x1,y1,x2,y2)
 bounding_box = {}
-
-
-# workaround to break from OnClick listener
-class OnClickInterrupt(Exception):
-    pass
-
-
-class InvalidBoundingBox(Exception):
-    pass
 
 
 # manages the click coordinates to set bounding box
