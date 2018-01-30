@@ -11,5 +11,7 @@ Required Packages
 
 1. pip3 install pillow
 2. pip3 install opencv-python
+3. pip3 install pyscreenshot
+4. pip3 install pyuserinput
 
 TODO: add more explanation
