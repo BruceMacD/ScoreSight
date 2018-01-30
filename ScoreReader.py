@@ -30,10 +30,11 @@ def cleanup(files):
 def read_score(frame):
     # TODO: find team names and score from data read
     text = pytesseract.image_to_string(Image.open(grayscale_file))
-    print(text)
+    words = text.split()
+    print(words)
+
 
 if __name__ == "__main__":
     grayscale_file = grayscale(file_src)
-    text = pytesseract.image_to_string(Image.open(grayscale_file))
-    print(text)
+    read_score(grayscale_file)
     cleanup([grayscale_file])
