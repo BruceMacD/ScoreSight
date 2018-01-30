@@ -6,11 +6,10 @@ The goal of this application is to scan live video footage of a sports games to 
 
 Currently I am working on extracting the scores.
 
-How to build and run using SBT
+Required Packages
 ------------------------------
 
-1. Install [Java JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-
-2. Install [SBT](http://www.scala-sbt.org/)
+1. pip3 install pillow
+2. pip3 install opencv-python
 
 TODO: add more explanation
