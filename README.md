@@ -13,5 +13,9 @@ Required Packages
 2. pip3 install opencv-python
 3. pip3 install pyscreenshot
 4. pip3 install pyuserinput
+5. pip3 install pytesseract
+
+Tesseract-OCR:
+Installing via terminal (Ubuntu): sudo apt-get install tesseract-ocr
 
 TODO: add more explanation
