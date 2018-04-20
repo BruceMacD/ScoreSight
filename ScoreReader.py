@@ -1,85 +1,104 @@
 # import the necessary packages
 from PIL import Image
+from ErrorCorrection import common_misreads
+from GameStatus import GameStatus
 import pytesseract
 
 # 2018 NBA roster, change to state name
 nba_teams = {
     # Cities
-    "Atlanta",
-    "Boston",
-    "Brooklyn",
-    "Charlotte",
-    "Chicago",
-    "Cleveland",
-    "Dallas",
-    "Denver",
-    "Detroit",
-    "Golden",
-    "State",
-    "Houston",
-    "Indiana",
-    "LA",
-    "Los",
-    "Angeles",
-    "Memphis",
-    "Miami",
-    "Milwaukee",
-    "Minnesota",
-    "New",
-    "Orleans",
-    "York",
-    "Oklahoma"
-    "City",
-    "Orlando",
-    "Philadelphia",
-    "Phoenix",
-    "Portland",
-    "Sacramento",
-    "San",
-    "Antonio",
-    "Toronto",
-    "Utah",
-    "Washington",
+    "atlanta",
+    "boston",
+    "brooklyn",
+    "charlotte",
+    "chicago",
+    "cleveland",
+    "dallas",
+    "denver",
+    "detroit",
+    "golden",
+    "state",
+    "houston",
+    "indiana",
+    "la",
+    "los",
+    "angeles",
+    "memphis",
+    "miami",
+    "milwaukee",
+    "minnesota",
+    "new",
+    "orleans",
+    "york",
+    "oklahoma"
+    "city",
+    "orlando",
+    "philadelphia",
+    "phoenix",
+    "portland",
+    "sacramento",
+    "san",
+    "antonio",
+    "toronto",
+    "utah",
+    "washington",
     # Teams
-    "Hawks",
-    "Celtics",
-    "Nets",
-    "Hornets",
-    "Bulls",
-    "Cavaliers",
-    "Mavericks",
-    "Nuggets",
-    "Pistons",
-    "State",
-    "Warriors",
-    "Rockets",
-    "Pacers",
-    "Clippers",
-    "Lakers",
-    "Grizzlies",
-    "Heat",
-    "Bucks",
-    "Timberwolves",
-    "Hornets",
-    "Knicks",
-    "Thunder",
-    "Magic",
-    "Sixers",
-    "Suns",
-    "Trail",
-    "Blazers",
-    "Kings",
-    "Spurs",
-    "Raptors",
-    "Jazz",
-    "Wizards"
+    "hawks",
+    "celtics",
+    "nets",
+    "hornets",
+    "bulls",
+    "cavaliers",
+    "mavericks",
+    "nuggets",
+    "pistons",
+    "warriors",
+    "rockets",
+    "pacers",
+    "clippers",
+    "lakers",
+    "grizzlies",
+    "heat",
+    "bucks",
+    "timberwolves",
+    "hornets",
+    "knicks",
+    "thunder",
+    "magic",
+    "sixers",
+    "suns",
+    "trail",
+    "blazers",
+    "kings",
+    "spurs",
+    "raptors",
+    "jazz",
+    "wizards"
 }
 
 
+# TODO: continuously update game entity
+# def update_game(game_status, value)
+
+
+# find team names and scores from read data
+def parse_output(words):
+    output = []
+    # TODO
+    # game_status = GameStatus('', '', '', '')
+    for word in words:
+        if word.lower() in nba_teams:
+            output.append(word.lower())
+        elif word.isdigit():
+            output.append(word)
+        elif word.lower() in common_misreads:
+            output.append(common_misreads[word.lower()])
+    return output
+
+
 def read_score(frame):
-    # TODO: find team names and score from data read
     text = pytesseract.image_to_string(Image.open(frame))
     words = text.split()
-    # Catch some misreads also find team names and scores from read data
-    
-    print(words)
+    output = parse_output(words)
+
+    print(output)
