@@ -1,4 +1,3 @@
-# import the necessary packages
 from PIL import Image
 from ErrorCorrection import common_misreads
 from GameStatus import GameStatus
